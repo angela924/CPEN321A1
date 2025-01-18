@@ -21,7 +21,6 @@ jobs:
           source: "."
           target: "/home/ubuntu/cpen321a1"
           
-
       - name: Rebuild and Deploy
         uses: appleboy/ssh-action@master
         with:

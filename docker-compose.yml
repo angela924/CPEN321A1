@@ -1,14 +1,5 @@
 version: '3'
 services:
-  mongo:
-    image: mongo:latest
-    container_name: mongo_instance
-    restart: alwways
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:data/db
-
   app:
     build:
       context: .
@@ -18,13 +9,7 @@ services:
     restart: always
     container_name: cpen321_app
     environment:
-      - DB_URI=${DB_URI}
       - PORT=${PORT}
     ports:
-      - "${PORT:${PORT}}"
-    depends_on:
-      - mongo
+      - "${PORT}:${PORT}"
     command: npm start
-
-volumes:
-  mongo_data:

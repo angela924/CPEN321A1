@@ -35,13 +35,6 @@ app.get("/serverIP", ((req: Request, res: Response) => {
   })
 );
 
-
-
-
-
-
-
-
 //Read SSL Certificates
 const key = fs.readFileSync("./key.pem");
 const cert = fs.readFileSync("./cert.pem");
